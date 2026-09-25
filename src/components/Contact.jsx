@@ -5,6 +5,7 @@ import MagneticButton from "@/components/ui/MagneticButton";
 import Logo from "@/components/ui/Logo";
 import { PROFILE } from "@/lib/data";
 import { fadeUp, staggerFast, viewportOnce } from "@/lib/motion";
+import { GMAIL_COMPOSE_URL, handleEmailClick } from "@/lib/email";
 
 export default function Contact() {
   return (
@@ -46,7 +47,14 @@ export default function Contact() {
           </motion.p>
 
           <motion.div variants={fadeUp} className="mt-2 flex flex-wrap justify-center gap-4">
-            <MagneticButton href={`mailto:${PROFILE.email}`} variant="primary" ariaLabel="Email Danussh">
+            <MagneticButton
+              href={GMAIL_COMPOSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleEmailClick}
+              variant="primary"
+              ariaLabel="Email Danussh via Gmail"
+            >
               Email Me
             </MagneticButton>
             <MagneticButton href={PROFILE.behance} target="_blank" variant="secondary" ariaLabel="View Behance portfolio">
@@ -63,7 +71,7 @@ export default function Contact() {
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-7 text-center sm:flex-row sm:text-left">
           <div className="flex items-center gap-3">
             <Logo className="text-base" />
-            <span className="text-sm text-muted">— {PROFILE.tagline}</span>
+            <span className="text-sm text-muted">― {PROFILE.tagline}</span>
           </div>
           <p className="text-xs text-muted">
             © {new Date().getFullYear()} {PROFILE.name}. Salem, India.

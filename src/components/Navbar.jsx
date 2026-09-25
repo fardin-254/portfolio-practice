@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "@/components/ui/Logo";
 import MagneticButton from "@/components/ui/MagneticButton";
-import { NAV_LINKS, PROFILE } from "@/lib/data";
+import { NAV_LINKS } from "@/lib/data";
+import { GMAIL_COMPOSE_URL, handleEmailClick } from "@/lib/email";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -86,10 +87,13 @@ export default function Navbar() {
 
         <div className="hidden md:block">
           <MagneticButton
-            href={`mailto:${PROFILE.email}`}
+            href={GMAIL_COMPOSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleEmailClick}
             variant="primary"
             className="px-6 py-2.5"
-            ariaLabel="Hire me — email Danussh"
+            ariaLabel="Hire me — email Danussh via Gmail"
           >
             Hire Me
           </MagneticButton>
@@ -145,7 +149,10 @@ export default function Navbar() {
               ))}
             </ul>
             <a
-              href={`mailto:${PROFILE.email}`}
+              href={GMAIL_COMPOSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={handleEmailClick}
               className="mt-3 flex items-center justify-center rounded-full bg-red px-6 py-3 text-sm font-semibold text-white shadow-glow"
             >
               Hire Me

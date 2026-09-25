@@ -1,6 +1,7 @@
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import CursorSpotlight from "@/components/ui/CursorSpotlight";
+import Toast from "@/components/ui/Toast";
 
 const display = Space_Grotesk({
   variable: "--font-display",
@@ -14,7 +15,7 @@ const sans = Inter({
 });
 
 export const metadata = {
-  title: "Sokratix — Danussh Aditya K · UI/UX Designer",
+  title: "Sokratix — Danussh Aditya K — UI/UX Designer",
   description:
     "Question-led UI/UX Designer. Sokratix turns better questions into meaningful digital experiences across healthcare and recruitment products.",
   keywords: [
@@ -26,7 +27,7 @@ export const metadata = {
     "Portfolio",
   ],
   openGraph: {
-    title: "Sokratix — Danussh Aditya K · UI/UX Designer",
+    title: "Sokratix — Danussh Aditya K — UI/UX Designer",
     description: "Design begins with better questions.",
     siteName: "Sokratix",
     type: "website",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-screen bg-ink text-white antialiased">
         <CursorSpotlight />
         {children}
+        <Toast />
       </body>
     </html>
   );
