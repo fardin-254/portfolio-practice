@@ -7,7 +7,7 @@ import { HERO_CHIPS, PROFILE } from "@/lib/data";
 import { EASE, lineReveal } from "@/lib/motion";
 
 const TITLE_LINES = [
-  "Hi, I'm Danussh Aditya —",
+  "Hi, I'm Mohammed Fardin —",
   "I turn questions into",
   "meaningful digital experiences.",
 ];
